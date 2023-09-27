@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="p-5 bg-dark">
+        <div class="text-center text-white">
+            <h1>Investment Calculator</h1>
+        </div><br>
+        <div class="card border border-0">
+            <div class="card-header bg-success">
+                <div class="text-white">
+                    Paso 1. Calcular la ganancia anual
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p>Ganancia mensual (S/.): </p>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" id="input_step1" class="w-100">
+                            </div>
+                            <div class="col">
+                                <span>x 12</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Ganancia anual: </p>
+                    </div>
+                    <div class="col">
+                        <p id="r_step1">NaN</p>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="card border border-0">
+            <div class="card-header bg-success text-white">
+                Paso 2. Cantidad que se necesita (Valor Presente)
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p>Monto anual (S/.): </p>
+                    </div>
+                    <div class="col">
+                        <input type="text" id="input_step2" class="w-100" onchange="">
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="card border border-0">
+            <div class="card-header bg-success text-white">
+                Paso 3. Ajustar al valor de la inflación
+            </div>
+            <div class="card-body">
+                <p>Formula: VF = VP x (1 + r)^n</p>
+                <p>Donde:</p>
+                <ul>
+                    <li>VF: Valor Futuro</li>
+                    <li>
+                        <div class="row">
+                            <div class="col">
+                                VP: Valor Presente
+                            </div>
+                            <div class="col">
+                                <input type="text" id="input_step3_1" class="w-100">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col">
+                                r: Interés (Inflación)
+                            </div>
+                            <div class="col">
+                                <input type="text" id="input_step3_2" class="w-100">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row">
+                            <div class="col">
+                                n: Años (Retiro)
+                            </div>
+                            <div class="col">
+                                <input type="text" id="input_step3_3" class="w-100">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col">
+                        <p>Valor Futuro: </p>
+                    </div>
+                    <div class="col">
+                        <p id="r_step3">NaN</p>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="card border border-0">
+            <div class="card-header bg-success text-white">
+                Paso 4. Restar ingresos existentes
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <p>Monto: </p>
+                    </div>
+                    <div class="col">
+                        <input type="text" id="input_step4" class="w-100">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Restamos: </p>
+                    </div>
+                    <div class="col">
+                        <p id="r_step4">NaN</p>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="card border border-0">
+            <div class="card-header bg-success text-white">
+                Paso 5. Resultado final
+            </div>
+            <div class="card-body">
+                <button onclick="calc()" class="mb-4">Calcular</button>
+                <div class="row">
+                    <div class="col">
+                        <p>Monto Final: </p>
+                    </div>
+                    <div class="col">
+                        <p id="r_step5">NaN</p>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="card border border-0">
+            <div class="card-header bg-success text-white">
+                Paso 6. Calculadora de interés
+            </div>
+            <div class="card-body">
+                <a href="https://www.investor.gov/financial-tools-calculators/calculators/calculadora-de-interes-compuesto">Link</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
